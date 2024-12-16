@@ -208,7 +208,7 @@ footer {
     margin-top: 20px;
     position: relative;
     bottom: 0;
-    width: 100%;
+
 }
 
 footer ul {
@@ -228,8 +228,10 @@ footer p {
     margin: 10px 0 0;
 }
 
+
 /* Styles pour les écrans de moins de 768px */
 @media (max-width: 768px) {
+    
     header {
         padding: 10px 0;
     }
