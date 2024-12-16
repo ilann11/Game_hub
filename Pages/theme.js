@@ -15,5 +15,10 @@ toggleButton.addEventListener('click', () => {
     document.querySelector('header').classList.toggle('dark-mode');
     document.querySelector('footer').classList.toggle('dark-mode');
 
-
+    // Enregistrer ou supprimer le thème choisi dans le localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark-mode');
+    } else {
+        localStorage.removeItem('theme');
+    }
 });

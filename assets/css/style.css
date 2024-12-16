@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
 
+/* Définition des variables CSS pour les couleurs */
+:root {
+    --form-bg-color: #f9f9f9;
+    --form-border-color: #ccc;
+}
+
 /* Styles de base */
 body {
     margin: 0;
@@ -56,7 +62,6 @@ header h1 {
 .navbar a.active {
     background: #555;
     border-radius: 5px;
-    
 }
 
 #sideBar {
@@ -84,7 +89,11 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-basis: calc(25% - 30px);
+    flex-basis: calc(25% - 30px); /* Taille par défaut des cartes */
+    display: flex;
+    flex-direction: column;
+    height: 250px; /* Hauteur fixe des cartes */
+    max-width: 250px; /* Limiter la largeur des cartes */
 }
 
 .Nos_Jeux li:hover {
@@ -92,8 +101,11 @@ main {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Modification pour l'image de la carte */
 .Nos_Jeux img {
     width: 100%;
+    height: 100%;
+    object-fit: contain; /* L'image s'adapte sans zoomer, conserve son ratio */
     display: block;
 }
 
@@ -101,24 +113,26 @@ main {
 .video_du_jeu {
     position: relative;
     padding-bottom: 56.25%; /* Maintient le ratio d'aspect */
-    height: 0; /* Hauteur initiale */
-    overflow: hidden; /* Cache le débordement */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px; /* Taille maximale pour la vidéo */
+    margin: 0 auto; /* Centrer la vidéo horizontalement */
 }
 
 .video_du_jeu iframe {
-    width: 100%; /* Utiliser 100% pour s'adapter à la largeur du conteneur */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 600px; /* Set a maximum width */
-    position: absolute; /* Positionnement absolu */
-    left: 0; /* Aligner à gauche */
-    top: 0; /* Aligner en haut */
-    overflow: hidden; /* Cache le débordement */
-    border: none; /* Pas de bordure */
+    width: 100%;
+    height: 100%; /* Hauteur de la vidéo est ajustée pour remplir le conteneur */
+    max-width: 800px; /* Limite la largeur maximale de l'iframe */
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    border: none;
 }
 
 /* Styles pour l'Info_Jeu */
 .Info_Jeu {
-    margin: 20px 0; /* Ajoute une marge pour espacer les éléments */
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,9 +208,10 @@ input[type="checkbox"] {
 
 /* Styles pour Zelda game image */
 .game-image img {
-    width: 100%; /* Adjust width as needed */
-    max-width: 600px; /* Set a maximum width */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    max-width: 600px;
+    max-height: 200px;
+    height: auto;
 }
 
 /* Styles communs */
@@ -205,10 +220,10 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
-    position: relative;
+    position: fixed;
+    left: 0;
+    right: 0;
     bottom: 0;
-
 }
 
 footer ul {
@@ -228,10 +243,8 @@ footer p {
     margin: 10px 0 0;
 }
 
-
 /* Styles pour les écrans de moins de 768px */
 @media (max-width: 768px) {
-    
     header {
         padding: 10px 0;
     }
@@ -247,7 +260,7 @@ footer p {
     }
 
     .Nos_Jeux li {
-        flex-basis: calc(50% - 30px);
+        flex-basis: calc(50% - 30px); /* Cartes à 50% de largeur pour les écrans plus petits */
     }
 
     .Info_Jeu img {
@@ -294,7 +307,7 @@ footer p {
     }
 
     .Nos_Jeux li {
-        flex-basis: calc(100% - 30px);
+        flex-basis: calc(100% - 30px); /* Cartes à 100% de largeur pour les très petits écrans */
     }
 
     .Info_Jeu img {
@@ -319,6 +332,7 @@ footer p {
     }
 }
 
+/* Mode sombre */
 body.dark-mode {
     background-color: #121212e2;
     color: #ffffff;
@@ -335,72 +349,23 @@ button#toggle-theme.dark-mode {
     border: 1px solid #ffffff;
 }
 
-.Info_Jeu img {
-    max-width: 300px;
-    height: auto;
+#toggle-theme {
+    background-color: #ffffff;
+    color: #121212;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.video_du_jeu iframe {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    max-width: 600px; /* Set a maximum width */
+#toggle-theme:hover {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 /* Styles pour le bouton de basculement de thème */
 #toggle-theme {
-    background-color: #ffffff; /* couleur de fond blanche */
-    color: #121212; /* couleur du texte sombre */
-    border: 1px solid #ffffff; /* bordure blanche */
-    padding: 10px 20px; /* padding */
-    border-radius: 20px; /* coins arrondis */
-    cursor: pointer; /* curseur pointeur au survol */
-    font-weight: bold; /* texte en gras */
-    transition: all 0.3s ease; /* effet de transition au survol */
-}
-
-#toggle-theme:hover {
-    background-color: #121212; /* couleur de fond sombre au survol */
-    color: #ffffff; /* couleur du texte blanche au survol */
-}
-
-/* Responsive styles for the navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Navbar items */
-.navbar ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navbar links */
-.navbar li {
-    margin-left: 20px;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column; /* Stack items vertically */
-        display: none; /* Hide by default */
-    }
-
-    .navbar.active ul {
-        display: flex; /* Show when active */
-    }
-
-    .navbar-toggle {
-        display: block; /* Show hamburger icon */
-    }
-}
-
-@media (min-width: 769px) {
-    .navbar-toggle {
-        display: none; /* Hide hamburger icon on larger screens */
-    }
+    display: inline-block;
 }
