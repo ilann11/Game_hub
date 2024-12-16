@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+/* Styles de base */
+body {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Conteneur de l'en-tête */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: #555;
+    border-radius: 5px;
+}
+
+#sideBar {
+    display: none;
+}
+
+main {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+/* Styles pour la section des jeux */
+.Nos_Jeux ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.Nos_Jeux li {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-basis: calc(25% - 30px);
+}
+
+.Nos_Jeux li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Nos_Jeux img {
+    width: 100%;
+    display: block;
+}
+
+/* Styles pour la vidéo du jeu */
+.video_du_jeu {
+    position: relative;
+    padding-bottom: 56.25%; /* Maintient le ratio d'aspect */
+    height: 0; /* Hauteur initiale */
+    overflow: hidden; /* Cache le débordement */
+}
+
+.video_du_jeu iframe {
+    width: 100%; /* Utiliser 100% pour s'adapter à la largeur du conteneur */
+    height: 400%; /* Utiliser 100% pour s'adapter à la hauteur du conteneur */
+    position: absolute; /* Positionnement absolu */
+    left: 0; /* Aligner à gauche */
+    top: 0; /* Aligner en haut */
+    overflow: hidden; /* Cache le débordement */
+    border: none; /* Pas de bordure */
+}
+
+/* Styles pour l'Info_Jeu */
+.Info_Jeu {
+    margin: 20px 0; /* Ajoute une marge pour espacer les éléments */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.base_du_jeu {
+    max-width: 600px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.note_des_autres a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.note_des_autres a:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour le formulaire */
+.formulaire {
+    max-width: 500px;
+    margin: 100px auto 20px;
+    padding: 30px;
+    background-color: var(--form-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--form-border-color);
+}
+
+.formulaire h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+/* Styles communs */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 10px 0 0;
+}
+
+/* Styles pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .Nos_Jeux li {
+        flex-basis: calc(50% - 30px);
+    }
+
+    .Info_Jeu img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .base_du_jeu {
+        max-width: 100%;
+    }
+
+    .formulaire {
+        padding: 15px;
+    }
+
+    .label {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"], 
+    input[type="number"], 
+    textarea, 
+    select {
+        font-size: 0.9rem;
+    }
+}
+
+/* Styles pour les écrans de moins de 480px */
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .Nos_Jeux li {
+        flex-basis: calc(100% - 30px);
+    }
+
+    .Info_Jeu img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .base_du_jeu {
+        max-width: 100%;
+    }
+
+    .formulaire {
+        padding: 10px;
+    }
+
+    .label, 
+    input[type="text"], 
+    input[type="number"], 
+    textarea, 
+    select {
+        font-size: 0.8rem;
+    }
+}
+
+body.dark-mode {
+    background-color: #121212e2;
+    color: #ffffff;
+}
+
+header.dark-mode, footer.dark-mode {
+    background-color: #121212d2;
+    color: #ffffff;
+}
+
+button#toggle-theme.dark-mode {
+    background-color: #ffffff;
+    color: #121212d2;
+    border: 1px solid #ffffff;
+}
+
+.Info_Jeu img {
+    max-width: 300px;
+    height: auto;
+}
+
+.video_du_jeu iframe {
+    width: 100%;
+    height: 400px;
+}
+
+/* Styles pour le bouton de basculement de thème */
+#toggle-theme {
+    background-color: #ffffff; /* couleur de fond blanche */
+    color: #121212; /* couleur du texte sombre */
+    border: 1px solid #ffffff; /* bordure blanche */
+    padding: 10px 20px; /* padding */
+    border-radius: 20px; /* coins arrondis */
+    cursor: pointer; /* curseur pointeur au survol */
+    font-weight: bold; /* texte en gras */
+    transition: all 0.3s ease; /* effet de transition au survol */
+}
+
+#toggle-theme:hover {
+    background-color: #121212; /* couleur de fond sombre au survol */
+    color: #ffffff; /* couleur du texte blanche au survol */
+}

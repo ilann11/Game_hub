@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Formulaire</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Game Hub</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="./index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="./formulaire.html"><i class="fas fa-address-card"></i> Formulaire</a></li>
+                    <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <button id="toggle-theme">Thème</button>
+        </div>
+    </header>
+    <div class="formulaire">
+        <h2>Formulaire</h2>
+        <hr>
+        <form action="mailto:amin.helali@etu.univ-amu.fr" method="post">
+            <div class="group">
+                <label for="nom" class="label">Nom</label>
+                <input type="text" id="nom" name="nom" placeholder="Entrez votre nom..." required>
+            </div>
+            <div class="group">
+                <label for="prénom" class="label">Prénom</label>
+                <input type="text" id="prénom" name="prénom" placeholder="Entrez votre prénom..." required>
+            </div>
+            <div class="group">
+                <label for="age" class="label">Âge</label>
+                <input type="number" id="age" name="age" placeholder="Entrez votre âge (1 à 120 ans)..." min="1"
+                    max="120" required>
+            </div>
+            <div class="group">
+                <label for="genre" class="label">Genre</label>
+                <select class="genre" id="genre" name="genre" required>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+            <div class="group">
+                <label for="avis" class="label">Votre avis</label>
+                <textarea class="avis" id="avis" name="avis" cols="50" rows="10"
+                    placeholder="Votre avis sur le site ou les jeux..." required></textarea>
+            </div>
+            <div class="group conditions-group">
+                <input type="checkbox" class="conditions" name="cvg" id="cgv" required>
+                <label for="cgv">J'accepte les <a href="https://policies.google.com/terms?hl=fr"
+                        target="_blank">Conditions Générales</a>.</label>
+            </div>
+            <div class="group">
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr">Contactez-nous</a></li>
+        </ul>
+        <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+    </footer>
+
+    <script src="theme.js"></script>
+</body>
+
+</html>
