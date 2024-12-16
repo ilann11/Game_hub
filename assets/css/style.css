@@ -105,7 +105,8 @@ main {
 
 .video_du_jeu iframe {
     width: 100%; /* Utiliser 100% pour s'adapter à la largeur du conteneur */
-    height: 400%; /* Utiliser 100% pour s'adapter à la hauteur du conteneur */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Set a maximum width */
     position: absolute; /* Positionnement absolu */
     left: 0; /* Aligner à gauche */
     top: 0; /* Aligner en haut */
@@ -121,8 +122,6 @@ main {
     align-items: center;
     text-align: center;
 }
-
-
 
 .base_du_jeu {
     max-width: 600px;
@@ -189,6 +188,13 @@ input[type="checkbox"] {
 
 .button:hover {
     background: #0056b3;
+}
+
+/* Styles pour Zelda game image */
+.game-image img {
+    width: 100%; /* Adjust width as needed */
+    max-width: 600px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Styles communs */
@@ -331,7 +337,8 @@ button#toggle-theme.dark-mode {
 
 .video_du_jeu iframe {
     width: 100%;
-    height: 400px;
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Set a maximum width */
 }
 
 /* Styles pour le bouton de basculement de thème */
@@ -349,4 +356,46 @@ button#toggle-theme.dark-mode {
 #toggle-theme:hover {
     background-color: #121212; /* couleur de fond sombre au survol */
     color: #ffffff; /* couleur du texte blanche au survol */
+}
+
+/* Responsive styles for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar items */
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar links */
+.navbar li {
+    margin-left: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Stack items vertically */
+        display: none; /* Hide by default */
+    }
+
+    .navbar.active ul {
+        display: flex; /* Show when active */
+    }
+
+    .navbar-toggle {
+        display: block; /* Show hamburger icon */
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-toggle {
+        display: none; /* Hide hamburger icon on larger screens */
+    }
 }
