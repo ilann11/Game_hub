@@ -1,0 +1,309 @@
+/*
+==========================================================
+game-details.css - Styles des pages de détail des jeux
+==========================================================
+
+Ce fichier contient :
+- La mise en page détaillée d'un jeu
+- Les styles du lecteur vidéo et son bouton play
+- Les styles des métadonnées (date, genre, etc.)
+- La section des caractéristiques du jeu
+- La grille des liens externes
+- La section des avis et notes
+- Les styles responsifs spécifiques aux pages de détails
+
+Utilisé uniquement sur les pages individuelles 
+de détail de chaque jeu.
+==========================================================
+*/
+
+/* Styles pour la page de détails du jeu  */
+.details-jeu {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* En-tête et métadonnées du jeu  */
+.entete-jeu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.meta-jeu {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.meta-jeu span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-color);
+}
+
+/* Bannière et informations principales */
+.banniere-jeu {
+    width: 100%;
+    height: auto;
+    max-height: 675px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.info-jeu {
+    flex: 1;
+}
+
+/* Sections diverses (regroupement des marges) */
+.description-jeu,
+.caracteristiques-jeu,
+.video-jeu,
+.liens-jeu,
+.avis-jeu {
+    margin-bottom: 30px;
+}
+
+/* Liste des caractéristiques */
+.caracteristiques-jeu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.caracteristiques-jeu li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Grille de liens */
+.grille-liens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.carte-lien {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #003d7a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.carte-lien:hover {
+    transform: translateY(-3px);
+    background-color: var(--secondary-color);
+}
+
+.carte-lien i {
+    font-size: 1.5rem;
+    width: 2rem;
+    text-align: center;
+}
+
+.carte-lien span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Section des avis */
+.conteneur-avis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.statistiques-avis {
+    flex: 1;
+}
+
+.note-globale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.numero-note {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.etoiles {
+    color: #ffd700;
+    margin: 10px 0;
+}
+
+.total-avis {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.ajout-avis {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bouton-avis {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #004080;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+}
+
+.bouton-avis:hover,
+.bouton-avis:focus {
+    background: #002d5a;
+    outline: var(--focus-outline-width) solid var(--focus-outline-color);
+    outline-offset: 2px;
+}
+
+.bouton-avis i {
+    color: #ffffff;
+}
+
+/* Ajustements responsifs */
+@media (min-width: 768px) {
+    .entete-jeu {
+        flex-direction: row;
+    }
+
+    .banniere-jeu {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.play-button i {
+    color: white;
+    font-size: 2rem;
+}
+
+.video-facade:hover .play-button {
+    background: var(--primary-color);
+}
+
+/* Styles de la vidéo */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40%;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-facade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.video-facade img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.error-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4444;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Media queries pour ajuster sur différents écrans */
+@media (max-width: 1200px) {
+    .video-container {
+        padding-bottom: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        padding-bottom: 56.25%;
+    }
+}
+
+

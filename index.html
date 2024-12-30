@@ -1,84 +1,206 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game Hub - Votre référence pour les jeux vidéo classiques. Découvrez notre collection de jeux légendaires, leurs histoires et partagez vos avis.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nom1 Prénom1, Nom2 Prénom2, Nom3 Prénom3">
+    <link rel="canonical" href="https://gamehub.fr">
+    
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="./assets/css/global.css" as="style">
+    <link rel="preload" href="./assets/css/style.css" as="style">
+    
+    <!-- Référencement local -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Game Hub",
+        "description": "Game Hub - Votre référence pour les jeux vidéo classiques. Découvrez notre collection de jeux légendaires, leurs histoires et partagez vos avis.",
+        "url": "https://gamehub.fr",
+        "location": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "413 Avenue Gaston Berger",
+                "addressLocality": "Aix-en-Provence",
+                "postalCode": "13625",
+                "addressCountry": "FR"
+            }
+        },
+        "department": {
+            "@type": "Organization",
+            "name": "Département Informatique IUT Aix-Marseille",
+            "telephone": "+33 4 42 93 90 00",
+            "url": "https://iut.univ-amu.fr/departements/informatique"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@gamehub.com",
+            "telephone": "+33 4 42 93 90 00"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://gamehub.fr/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "sameAs": [
+            "https://www.facebook.com/GameHub",
+            "https://twitter.com/GameHub",
+            "https://www.instagram.com/GameHub"
+        ],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Game Hub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gamehub.fr/assets/img/logo.png"
+            }
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "offerCount": "9",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    
+    <!-- Référencement réseaux sociaux Open Graph -->
+    <meta property="og:title" content="Game Hub - Collection de Jeux Vidéo Classiques">
+    <meta property="og:description" content="Découvrez notre collection de jeux vidéo classiques légendaires, leurs histoires et partagez vos avis.">
+    <meta property="og:image" content="https://gamehub.fr/assets/img/logo.png">
+    <meta property="og:url" content="https://gamehub.fr">
+    <meta property="og:type" content="website">
+
+    <!-- Référencement Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@GameHub">
+    <meta name="twitter:title" content="Game Hub - Collection de Jeux Vidéo Classiques">
+    <meta name="twitter:description" content="Découvrez notre collection de jeux vidéo classiques légendaires, leurs histoires et partagez vos avis.">
+    <meta name="twitter:image" content="https://gamehub.fr/assets/img/logo.png">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><!--pour avoir les logo-->
-    <link rel="icon" href="./assets/img/icon.ico" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="icon" href="./assets/img/icon.ico">
     <title>Game Hub</title>
 </head>
 <body>
     <header>
         <div class="container">
-            <nav class="navbar">
+            <a href="index.html" aria-label="Accueil Game Hub"><h1>Game Hub</h1></a>
+            <nav class="navbar" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Menu principal">
                 <ul>
-                    <li><a href="./Pages/formulaire.html"><i class="fas fa-address-card"></i> Formulaire</a></li>
-                    <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="./Pages/formulaire.html" aria-label="Accéder au formulaire" itemprop="url"><i class="fas fa-address-card" aria-hidden="true"></i> <span itemprop="name">Formulaire</span></a></li>
+                    <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr" aria-label="Nous contacter par email" itemprop="url"><i class="fas fa-envelope" aria-hidden="true"></i> <span itemprop="name">Contact</span></a></li>
                 </ul>
             </nav>
-            <button id="toggle-theme">Thème</button>
+            <div class="header-buttons">
+                <button class="menu-toggle" aria-label="Menu de navigation">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <button id="toggle-theme" aria-label="Changer le thème">Thème</button>
+            </div>
         </div>
     </header>
 
     <main>
-        <div id="games" class="Nos_Jeux">
-            <h1>Les jeux</h1>
-            <ul>
-                <li>
-                    <a href="./Pages/Super_Mario.html">
-                        <div class="image-container">
-                            <img src="./assets/img/mario.jpg" alt="Jaquette du jeu Super Mario, un héros emblématique de Nintendo">
-                        </div>
-                        <div class="Titre">
-                            <h2>Super Mario Bros</h2>
-                        </div>
-                    </a>
-                </li>
-                <a href="./Pages/tombR.html" id="tombR">
-                <li>
-                    <div class="image-container">
-                        <img src="./assets/img/tombR.jpg" alt="Jaquette du jeu Tomb Raider, une aventure captivante">
+        <div class="container">
+            <section class="search-filters">
+                <h2>Filtres de recherche</h2>
+                <div class="filter-group">
+                    <div class="search-bar">
+                        <label for="searchInput" class="visually-hidden">Rechercher un jeu</label>
+                        <input type="text" id="searchInput" placeholder="Rechercher un jeu par titre, genre, plateforme...">
+                        <button type="button" aria-label="Lancer la recherche">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </button>
                     </div>
-                    <div class="Titre">
-                        <label for="./Pages/tombR.html">Tomb Raider</label>
+
+                    <div class="sort">
+                        <label for="sortSelect" class="visually-hidden">Trier les jeux</label>
+                        <select id="sortSelect" aria-label="Options de tri">
+                            <option value="popularity">Trier par popularité</option>
+                            <option value="date">Trier par date de sortie</option>
+                            <option value="alpha">Trier par ordre alphabétique</option>
+                            <option value="rating">Trier par note</option>
+                            <option value="price">Trier par prix</option>
+                        </select>
                     </div>
-                </li>
-                </a>
-                <li>
-                    <a href="./Pages/tetris.html" id="tetris">
-                        <div class="image-container">
-                            <img src="./assets/img/tretris.jpg" alt="Jaquette du jeu Tetris, un puzzle classique et intemporel">
-                        </div>
-                        <div class="Titre">
-                            <label for="./Pages/tetris.html">Tetris</label>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="./Pages/zelda.html" id="zelda">
-                        <div class="image-container">
-                            <img src="./assets/img/zelda.png" alt="Jaquette du jeu Zelda, un voyage légendaire">
-                        </div>
-                        <div class="Titre">
-                            <label for="zelda">Zelda</label>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+                </div>
+            </section>
+
+            <section id="games" class="Nos_Jeux" aria-label="Liste des jeux">
+                <h2>Les jeux disponibles</h2>
+                <div class="games-grid" role="list">
+                    <!-- Les jeux seront injectés ici par JavaScript -->
+                </div>
+            </section>
         </div>
     </main>
 
     <footer>
         <ul>
-            <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr" class="fas fa-envelope"> Contactez-nous </a></li>
-            <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="https://www.instagram.com/gamehub24?utm_source=ig_web_button_share_sheet&igsh=M2M0Y2JmOTAyOA== " target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="mailto:contact@gamehub.com" class="fas fa-envelope"> Contactez-nous</a></li>
+            <li><a href="https://youtube.com/@game_hub240?si=CqTT7-TUIiFihJGH" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube Game Hub</a></li>
+            <li><a href="https://www.instagram.com/gamehub24" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-instagram"></i> Instagram Game Hub</a></li>
         </ul>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img alt="Licence Creative Commons" 
+                     width="88" 
+                     height="31" 
+                     src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+            </a>
+        </p>
         <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
     </footer>
 
-    <script src="./Pages/theme.js"></script>
+    <!-- Template pour la carte de jeu -->
+    <template id="game-card-template">
+        <div class="game-card" role="listitem">
+            <div class="game-image">
+                <img src="" alt="" 
+                     loading="lazy"
+                     decoding="async"
+                     fetchpriority="low"
+                     class="game-thumbnail">
+                <div class="game-overlay">
+                    <div class="game-rating" aria-label="Note du jeu">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <span class="rating-value"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="game-info">
+                <h2></h2>
+                <div class="game-meta">
+                    <span class="game-genre" aria-label="Genre"></span>
+                    <span class="game-year" aria-label="Année de sortie"></span>
+                    <span class="game-platform" aria-label="Plateformes"></span>
+                </div>
+                <div class="game-price" aria-label="Prix"></div>
+                <div class="game-actions">
+                    <button class="details-btn" aria-label="Voir les détails du jeu">Voir les détails</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="./assets/js/games-data.js" defer></script>
+    <script src="./assets/js/games-functions.js" defer></script>
+    <script src="./assets/js/game-search.js" defer></script>
+    <script src="./assets/js/theme.js" defer></script>
+    <script src="./assets/js/back-to-top.js" defer></script>
+    <script src="./assets/js/menu.js" defer></script>
+    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 </body>
 </html>

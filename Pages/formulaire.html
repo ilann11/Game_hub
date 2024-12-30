@@ -2,13 +2,14 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"><!--pour avoir les logo-->
-    <link rel="icon" href="../assets/img/icon.ico" >
-    <title>Formulaire</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="../assets/img/icon.ico">
+    <title>Contact - Game Hub</title>
 </head>
 
 <body>
@@ -17,65 +18,80 @@
             <a href="../index.html"><h1>Game Hub</h1></a>
             <nav class="navbar">
                 <ul>
-                    <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr"><i class="fas fa-envelope"></i> Contact</a>
-                    </li>
+                    <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="./formulaire.html"><i class="fas fa-address-card"></i> Formulaire</a></li>
                 </ul>
             </nav>
             <button id="toggle-theme">Thème</button>
         </div>
     </header>
-    <div class="formulaire">
-        <h2>Formulaire</h2>
-        <hr>
-        <form action="mailto:ilann.stefanovitch@etu.univ-amu.fr" method="post">
-            <div class="group">
-                <label for="nom" class="label">Nom</label>
-                <input type="text" id="nom" name="nom" placeholder="Entrez votre nom..." required>
-            </div>
-            <div class="group">
-                <label for="prénom" class="label">Prénom</label>
-                <input type="text" id="prénom" name="prénom" placeholder="Entrez votre prénom..." required>
-            </div>
-            <div class="group">
-                <label for="age" class="label">Âge</label>
-                <input type="number" id="age" name="age" placeholder="Entrez votre âge..." min="1" max="120" required>
-            </div>
-            <div class="group">
-                <label for="genre" class="label">Genre</label>
-                <select class="genre" id="genre" name="genre" required>
-                    <option value="homme">Homme</option>
-                    <option value="femme">Femme</option>
-                    <option value="autre">Robot</option>
-                    <option value="autre">Autre</option>
-                </select>
-            </div>
-            <div class="group">
-                <label for="avis" class="label">Votre avis</label>
-                <textarea class="avis" id="avis" name="avis" cols="50" rows="10"
-                    placeholder="Votre avis sur le site ou les jeux..." required></textarea>
-            </div>
-            <div class="group conditions-group">
-                <input type="checkbox" class="conditions" name="cvg" id="cgv" required>
-                <label for="cgv">J'accepte les <a href="https://policies.google.com/terms?hl=fr"
-                        target="_blank">Conditions Générales</a>.</label>
-            </div>
-            <div class="group">
-                <button type="submit">Envoyer</button>
-            </div>
-        </form>
-    </div>
+
+    <main>
+        <div class="container">
+            <section class="formulaire-contact">
+                <h2>Contactez-nous</h2>
+                <p class="form-intro">Une question ? Une suggestion ? N'hésitez pas à nous contacter !</p>
+                
+                <form action="mailto:contact@gamehub.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="name" required minlength="2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet :</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Choisissez un sujet</option>
+                            <option value="Question">Question</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Problème">Problème</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" required
+                                  placeholder="Votre message ici..."
+                                  minlength="10" maxlength="500"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Envoyer
+                    </button>
+                </form>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <ul>
-            <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr" class="fas fa-envelope"> Contactez-nous </a></li>
-            <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="https://www.instagram.com/gamehub24?utm_source=ig_web_button_share_sheet&igsh=M2M0Y2JmOTAyOA== " target="_blank"><i class="fab fa-instagram"></i></a></li>
-
+            <li><a href="mailto:contact@gamehub.com" class="fas fa-envelope"> Contactez-nous</a></li>
+            <li><a href="https://youtube.com/@game_hub240?si=CqTT7-TUIiFihJGH" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube Game Hub</a></li>
+            <li><a href="https://www.instagram.com/gamehub24" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram Game Hub</a></li>
         </ul>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img alt="Licence Creative Commons" 
+                     width="88" 
+                     height="31" 
+                     src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+            </a>
+        </p>
         <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
     </footer>
 
-    <script src="theme.js"></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
+    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <script src="../assets/js/back-to-top.js" defer></script>
 </body>
 
 </html>

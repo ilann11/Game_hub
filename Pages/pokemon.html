@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../assets/css/game-details.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="icon" href="../assets/img/icon.ico">
-    <title>Tetris</title>
+    <title>Pokémon Version Rouge et Bleue</title>
 </head>
 <body>
     <header>
@@ -38,12 +38,18 @@
         <div class="container">
             <article class="details-jeu">
                 <div class="entete-jeu">
-                    <img src="../assets/img/tetris.webp" alt="Tetris" class="banniere-jeu" width="1200" height="675" loading="lazy">
+                    <img src="../assets/img/pokemon-red.webp" 
+                         alt="Pokémon Version Rouge et Bleue" 
+                         class="banniere-jeu" 
+                         width="1200" 
+                         height="675" 
+                         fetchpriority="high"
+                         decoding="async">
                     <div class="info-jeu">
-                        <h2>Tetris</h2>
+                        <h2>Pokémon Version Rouge et Bleue</h2>
                         <div class="meta-jeu">
-                            <span><i class="fas fa-calendar"></i> 1984</span>
-                            <span><i class="fas fa-gamepad"></i> Alexey Pajitnov</span>
+                            <span><i class="fas fa-calendar"></i> 1996</span>
+                            <span><i class="fas fa-gamepad"></i> Game Freak</span>
                             <span><i class="fas fa-star"></i> 4.9/5</span>
                         </div>
                     </div>
@@ -51,56 +57,53 @@
 
                 <section class="description-jeu">
                     <h2>Description</h2>
-                    <p>Tetris est un jeu de puzzle intemporel où les joueurs doivent organiser des blocs de formes différentes
-                         (appelés tétriminos) qui tombent du haut de l'écran.
-                         L'objectif est de créer des lignes complètes qui disparaissent,
-                          évitant ainsi que les blocs n'atteignent le haut de l'écran. 
-                         Simple à comprendre mais difficile à maîtriser,
-                          le jeu de Tetris est devenu l'un des jeux vidéo les plus populaires de tous les temps.</p>
+                    <p>Pokémon Version Rouge et Bleue sont les jeux qui ont lancé le phénomène mondial Pokémon. Les joueurs incarnent un jeune dresseur qui part à l'aventure pour capturer les 151 Pokémon, devenir Maître Pokémon et compléter le Pokédex. Ces jeux ont établi les bases d'une franchise qui continue d'enchanter les joueurs du monde entier.</p>
                 </section>
 
                 <section class="caracteristiques-jeu">
                     <h2>Caractéristiques</h2>
                     <ul>
-                        <li><i class="fas fa-check"></i> Gameplay addictif</li>
-                        <li><i class="fas fa-check"></i> Difficulté progressive</li>
-                        <li><i class="fas fa-check"></i> Musique emblématique</li>
-                        <li><i class="fas fa-check"></i> Mode marathon</li>
-                        <li><i class="fas fa-check"></i> Système de score</li>
+                        <li><i class="fas fa-check"></i> 151 Pokémon</li>
+                        <li><i class="fas fa-check"></i> Combats stratégiques</li>
+                        <li><i class="fas fa-check"></i> Mode échange</li>
+                        <li><i class="fas fa-check"></i> Quête épique</li>
+                        <li><i class="fas fa-check"></i> Monde vaste</li>
                     </ul>
                 </section>
+
                 <section class="video-jeu">
                     <h2>Bande-annonce</h2>
                     <div class="video-container">
-                        <div class="video-facade" data-video-id="E-ej_8XBwmI">
-                            <img src="https://img.youtube.com/vi/E-ej_8XBwmI/maxresdefault.jpg" 
-                                 alt="Miniature de la bande-annonce Tetris"
+                        <div class="video-facade" data-video-id="5tTc8__lXkM">
+                            <img src="https://img.youtube.com/vi/5tTc8__lXkM/maxresdefault.jpg" 
+                                 alt="Miniature Pokémon Version Rouge et Bleue Trailer"
                                  width="1280"
                                  height="720"
                                  loading="lazy"
                                  decoding="async"
                                  class="video-thumbnail">
                             <button class="play-button" 
-                                    aria-label="Lire la bande-annonce de Tetris">
+                                   onclick="loadVideo('5tTc8__lXkM')"
+                                   onkeypress="if(event.key === 'Enter') loadVideo('5tTc8__lXkM')"
+                                   aria-label="Lire la bande-annonce de Pokémon">
                                 <i class="fas fa-play" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
                 </section>
-                
 
                 <section class="liens-jeu">
                     <h2>Liens utiles</h2>
                     <div class="grille-liens">
-                        <a href="https://tetris.com" target="_blank" rel="noopener noreferrer" class="carte-lien">
+                        <a href="https://www.pokemon.com/fr" target="_blank" rel="noopener noreferrer" class="carte-lien">
                             <i class="fas fa-globe fa-2x"></i>
                             <span>Site officiel</span>
                         </a>
-                        <a href="https://tetris.fandom.com" target="_blank" rel="noopener noreferrer" class="carte-lien">
+                        <a href="https://pokemon.fandom.com" target="_blank" rel="noopener noreferrer" class="carte-lien">
                             <i class="fas fa-book"></i>
                             <span>Wiki</span>
                         </a>
-                        <a href="https://www.youtube.com/tetris" target="_blank" rel="noopener noreferrer" class="carte-lien">
+                        <a href="https://www.youtube.com/pokemon" target="_blank" rel="noopener noreferrer" class="carte-lien">
                             <i class="fab fa-youtube"></i>
                             <span>Chaîne YouTube</span>
                         </a>
@@ -120,7 +123,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <span class="total-avis">Basé sur 18,500 avis</span>
+                                <span class="total-avis">Basé sur 25,600 avis</span>
                             </div>
                         </div>
                         <div class="ajout-avis">
@@ -143,7 +146,10 @@
                         class="fab fa-instagram"></i> Instagram Game Hub</a></li>
         </ul>
         <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-            <img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+            <img alt="Licence Creative Commons" 
+                 width="88" 
+                 height="31" 
+                 src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
         </a>
         <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
     </footer>
@@ -156,31 +162,22 @@
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
-    <!-- Script de chargement vidéo -->
+    <!-- Video loading script -->
     <script>
-        function loadVideo(videoId) {
-            const facade = document.querySelector(`[data-video-id="${videoId}"]`);
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`;
-            iframe.title = "Tetris Trailer";
-            iframe.width = '1280';
-            iframe.height = '720';
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullscreen = true;
-            
-            const wrapper = facade.closest('.video-container');
-            wrapper.innerHTML = '';
-            wrapper.appendChild(iframe);
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.video-facade').forEach(facade => {
-                facade.addEventListener('click', () => {
-                    const videoId = facade.dataset.videoId;
-                    loadVideo(videoId);
-                });
-            });
+            window.loadVideo = function(videoId) {
+                const facade = document.querySelector(`[data-video-id="${videoId}"]`);
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`;
+                iframe.title = "Pokémon Version Rouge et Bleue Trailer";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                
+                const wrapper = facade.closest('.video-container');
+                wrapper.innerHTML = ''; // Vide le conteneur parent
+                wrapper.appendChild(iframe);
+            }
         });
     </script>
 </body>
-</html>
+</html> 

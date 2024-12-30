@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donkey Kong Country</title>
+    <link rel="preload" href="../assets/css/style.css" as="style">
+    <link rel="preload" href="../assets/css/global.css" as="style">
+    <link rel="preload" href="../assets/css/game-details.css" as="style">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/game-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+    <link rel="icon" href="../assets/img/icon.ico">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="../index.html"><h1>Game Hub</h1></a>
+            <nav class="navbar" aria-label="Navigation principale">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu-principal">
+                    <span class="hamburger" aria-hidden="true"></span>
+                </button>
+                <ul id="menu-principal" class="menu">
+                    <li><a href="mailto:ilann.stefanovitch@etu.univ-amu.fr"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
+                    <li><a href="./formulaire.html"><i class="fas fa-address-card" aria-hidden="true"></i> Formulaire</a></li>
+                </ul>
+            </nav>
+            <button id="toggle-theme" aria-label="Changer le thème">Thème</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <article class="details-jeu">
+                <div class="entete-jeu">
+                    <img src="../assets/img/donkey-kong-country.webp" 
+                         alt="Donkey Kong Country" 
+                         class="banniere-jeu"
+                         width="1200" 
+                         height="675"
+                         fetchpriority="high"
+                         decoding="async">
+                    <div class="info-jeu">
+                        <h2>Donkey Kong Country</h2>
+                        <div class="meta-jeu">
+                            <span><i class="fas fa-calendar"></i> 1994</span>
+                            <span><i class="fas fa-gamepad"></i> Rare</span>
+                            <span><i class="fas fa-star"></i> 4.7/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="description-jeu">
+                    <h2>Description</h2>
+                    <p>Donkey Kong Country est un jeu de plateforme révolutionnaire qui a marqué l'histoire des jeux vidéo. 
+                        Avec ses graphismes en 3D pré-rendus impressionnants pour l'époque, son gameplay précis et sa bande-son mémorable, 
+                        le jeu suit Donkey Kong et Diddy Kong dans leur quête pour récupérer leur réserve de bananes volée.</p>
+                </section>
+
+                <section class="caracteristiques-jeu">
+                    <h2>Caractéristiques</h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Graphismes innovants</li>
+                        <li><i class="fas fa-check"></i> Gameplay précis</li>
+                        <li><i class="fas fa-check"></i> Duo de personnages</li>
+                        <li><i class="fas fa-check"></i> Niveaux variés</li>
+                        <li><i class="fas fa-check"></i> Musique mémorable</li>
+                    </ul>
+                </section>
+
+                <section class="video-jeu">
+                    <h2>Bande-annonce</h2>
+                    <div class="video-container">
+                        <div class="video-facade" data-video-id="Pp2aMs38ERY">
+                            <img src="https://img.youtube.com/vi/Pp2aMs38ERY/maxresdefault.jpg" 
+                                 alt="Miniature de la bande-annonce Donkey Kong Country"
+                                 width="1280"
+                                 height="720"
+                                 loading="lazy"
+                                 decoding="async"
+                                 class="video-thumbnail">
+                            <button class="play-button"
+                                    aria-label="Lire la vidéo de Donkey Kong Country" 
+                                    onclick="loadVideo('Pp2aMs38ERY')"
+                                    onkeypress="if(event.key === 'Enter') loadVideo('Pp2aMs38ERY')">
+                                <i class="fas fa-play" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="liens-jeu">
+                    <h2>Liens utiles</h2>
+                    <div class="grille-liens">
+                        <a href=https://www.nintendo.com/us/store/products/donkey-kong-country-returns-hd-switch/ 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="carte-lien">
+                            <i class="fas fa-globe fa-2x"></i>
+                            <span>Site officiel</span>
+                        </a>
+                        <a href="https://donkeykong.fandom.com" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="carte-lien">
+                            <i class="fas fa-book"></i>
+                            <span>Wiki</span>
+                        </a>
+                        <a href="https://www.youtube.com/nintendo" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="carte-lien">
+                            <i class="fab fa-youtube"></i>
+                            <span>Chaîne YouTube</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="avis-jeu">
+                    <h2>Avis des joueurs</h2>
+                    <div class="conteneur-avis">
+                        <div class="statistiques-avis">
+                            <div class="note-globale">
+                                <span class="numero-note">4.7</span>
+                                <div class="etoiles">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="total-avis">Basé sur 15,300 avis</span>
+                            </div>
+                        </div>
+                        <div class="ajout-avis">
+                            <a href="../Pages/formulaire.html" class="bouton-avis">
+                                <i class="fas fa-pencil-alt"></i> Écrire un avis
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="mailto:contact@gamehub.com" class="fas fa-envelope"> Contactez-nous</a></li>
+            <li><a href="https://youtube.com/@game_hub240?si=CqTT7-TUIiFihJGH" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube Game Hub</a></li>
+            <li><a href="https://www.instagram.com/gamehub24" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-instagram"></i> Instagram Game Hub</a></li>
+        </ul>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img alt="Licence Creative Commons" 
+                     width="88" 
+                     height="31" 
+                     src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+            </a>
+        </p>
+        <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/menu.js" defer></script>
+    <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/back-to-top.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.loadVideo = (videoId) => {
+                const facade = document.querySelector(`[data-video-id="${videoId}"]`);
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`;
+                iframe.title = "Donkey Kong Country Trailer";
+                iframe.width = '1280';
+                iframe.height = '720';
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                
+                const wrapper = facade.closest('.video-container');
+                wrapper.innerHTML = '';
+                wrapper.appendChild(iframe);
+            };
+        });
+    </script>
+    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+</body>
+</html> 
