@@ -57,7 +57,7 @@ const UI = {
                     <div class="no-results">
                         <i class="fas fa-search"></i>
                         <h2>Aucun jeu trouvé</h2>
-                        <p>Vous êtes nul, vous ne savez pas faire une recherche</p>
+                        <p>Vous êtes faible, vous ne savez pas faire une recherche</p>
                     </div>`;
             } else {
                 const fragment = document.createDocumentFragment();
