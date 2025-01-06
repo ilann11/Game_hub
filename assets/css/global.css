@@ -18,7 +18,32 @@ Définit la structure et les styles fondamentaux.
 */
 
 /* === Importation de la police Kanit depuis Google Fonts === */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Light.woff2') format('woff2'),
+         url('../fonts/Kanit-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Regular.woff2') format('woff2'),
+         url('../fonts/Kanit-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../fonts/Kanit-Bold.woff2') format('woff2'),
+         url('../fonts/Kanit-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 
 /* === Variables pour le mode sombre  === */
