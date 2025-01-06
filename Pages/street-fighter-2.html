@@ -74,20 +74,14 @@
                 <section class="video-jeu">
                     <h2>Bande-annonce</h2>
                     <div class="video-container">
-                        <div class="video-facade" data-video-id="xI284D4y1q4">
-                            <img src="https://img.youtube.com/vi/xI284D4y1q4/maxresdefault.jpg" 
-                                 alt="Miniature Street Fighter II Trailer"
-                                 loading="lazy"
-                                 width="1280"
-                                 height="720"
-                                 decoding="async">
-                            <button 
-                                class="play-button" 
-                                aria-label="Lire la bande-annonce de Street Fighter II"
-                                tabindex="0">
-                                <i class="fas fa-play" aria-hidden="true"></i>
-                            </button>
-                        </div>
+                        <iframe 
+                            width="1280" 
+                            height="720" 
+                            src="https://www.youtube.com/embed/xI284D4y1q4" 
+                            title="Street Fighter II Trailer"
+                            allow="autoplay; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </section>
 
@@ -152,46 +146,22 @@
                     rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube Game Hub</a></li>
             <li><a href="https://www.instagram.com/gamehub24" target="_blank" rel="noopener noreferrer"><i
                         class="fab fa-instagram"></i> Instagram Game Hub</a></li>
+            <li><a href="https://discord.gg/zNmbNJ62" target="_blank" 
+                            rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord Game Hub</a></li>
         </ul>
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >
             <img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
         </a>
         <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+        <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top"></button>
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+
     </footer>
 
     <!-- Scripts -->
-    <script src="../assets/js/menu.js" defer></script>
     <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
     <script src="../assets/js/back-to-top.js" defer></script>
-    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
-    
-    <!-- Video Loading Script -->
-    <script>
-        function loadVideo(videoId) {
-            const iframe = document.createElement('iframe');
-            iframe.setAttribute('height', '400');
-            iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`);
-            iframe.setAttribute('title', 'Street Fighter II Video');
-            iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('style', 'width: 100%; border: none;');
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-            iframe.setAttribute('allowfullscreen', '');
 
-            const videoContainer = document.querySelector(`[data-video-id="${videoId}"]`);
-            videoContainer.parentNode.replaceChild(iframe, videoContainer);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const videoContainers = document.querySelectorAll('.video-facade');
-            videoContainers.forEach(container => {
-                container.addEventListener('click', () => {
-                    const videoId = container.getAttribute('data-video-id');
-                    loadVideo(videoId);
-                });
-            });
-        });
-    </script>
 </body>
 </html> 

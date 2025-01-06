@@ -21,15 +21,17 @@
         <div class="container">
             <a href="../index.html"><h1>Game Hub</h1></a>
             <nav class="navbar" aria-label="Navigation principale">
-                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu-principal">
-                    <span class="hamburger" aria-hidden="true"></span>
-                </button>
-                <ul id="menu-principal" class="menu">
-                    <li><a href="mailto:sitebut@alwaysdata.net"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
-                    <li><a href="./formulaire.html"><i class="fas fa-address-card" aria-hidden="true"></i> Formulaire</a></li>
+                <ul>
+                    <li><a href="./formulaire.html"><i class="fas fa-address-card" aria-hidden="true"></i> <span>Formulaire</span></a></li>
+                    <li><a href="mailto:sitebut@alwaysdata.net"><i class="fas fa-envelope" aria-hidden="true"></i> <span>Contact</span></a></li>
                 </ul>
             </nav>
-            <button id="toggle-theme" aria-label="Changer le thème">Thème</button>
+            <div class="header-buttons">
+                <button class="menu-toggle" aria-label="Menu de navigation">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <button id="toggle-theme" aria-label="Changer le thème">Thème</button>
+            </div>
         </div>
     </header>
 
@@ -75,28 +77,21 @@
                 <section class="video-jeu">
                     <h2>Bande-annonce</h2>
                     <div class="video-container">
-                        <div class="video-facade" data-video-id="Pp2aMs38ERY">
-                            <img src="https://img.youtube.com/vi/Pp2aMs38ERY/maxresdefault.jpg" 
-                                 alt="Miniature de la bande-annonce Donkey Kong Country"
-                                 width="1280"
-                                 height="720"
-                                 loading="lazy"
-                                 decoding="async"
-                                 class="video-thumbnail">
-                            <button class="play-button"
-                                    aria-label="Lire la vidéo de Donkey Kong Country" 
-                                    onclick="loadVideo('Pp2aMs38ERY')"
-                                    onkeypress="if(event.key === 'Enter') loadVideo('Pp2aMs38ERY')">
-                                <i class="fas fa-play" aria-hidden="true"></i>
-                            </button>
-                        </div>
+                        <iframe 
+                            width="1280" 
+                            height="720" 
+                            src="https://www.youtube.com/embed/Pp2aMs38ERY" 
+                            title="Donkey Kong Country Trailer"
+                            allow="autoplay; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </section>
 
                 <section class="liens-jeu">
                     <h2>Liens utiles</h2>
                     <div class="grille-liens">
-                        <a href=https://www.nintendo.com/us/store/products/donkey-kong-country-returns-hd-switch/ 
+                        <a href="https://www.nintendo.com/us/store/products/donkey-kong-country-returns-hd-switch/" 
                            target="_blank" 
                            rel="noopener noreferrer" 
                            class="carte-lien">
@@ -154,9 +149,10 @@
                     rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube Game Hub</a></li>
             <li><a href="https://www.instagram.com/gamehub24" target="_blank" rel="noopener noreferrer"><i
                         class="fab fa-instagram"></i> Instagram Game Hub</a></li>
+            <li><a href="https://discord.gg/zNmbNJ62" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord Game Hub</a></li>
         </ul>
         <p>
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >
                 <img alt="Licence Creative Commons" 
                      width="88" 
                      height="31" 
@@ -164,32 +160,15 @@
             </a>
         </p>
         <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+
+        <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
     </footer>
 
     <!-- Scripts -->
-    <script src="../assets/js/menu.js" defer></script>
     <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
     <script src="../assets/js/back-to-top.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            window.loadVideo = (videoId) => {
-                const facade = document.querySelector(`[data-video-id="${videoId}"]`);
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`;
-                iframe.title = "Donkey Kong Country Trailer";
-                iframe.width = '1280';
-                iframe.height = '720';
-                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-                iframe.allowFullscreen = true;
-                
-                const wrapper = facade.closest('.video-container');
-                wrapper.innerHTML = '';
-                wrapper.appendChild(iframe);
-            };
-        });
-    </script>
-    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
 </body>
 </html> 

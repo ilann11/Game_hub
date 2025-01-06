@@ -13,35 +13,10 @@
     <link rel="preload" href="./assets/css/style.css" as="style">
     
     <!-- Référencement local -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Game Hub",
-        "description": "Game Hub - Votre référence pour les jeux vidéo classiques. Découvrez notre collection de jeux légendaires, leurs histoires et partagez vos avis.",
-        "url": "https://gamehub.fr",
-        "location": {
-            "@type": "Place",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "413 Avenue Gaston Berger",
-                "addressLocality": "Aix-en-Provence",
-                "postalCode": "13625",
-                "addressCountry": "FR"
-            }
-        },
-        "department": {
-            "@type": "Organization",
-            "name": "Département Informatique IUT Aix-Marseille",
-            "telephone": "+33 4 42 93 90 00",
-            "url": "https://iut.univ-amu.fr/departements/informatique"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://gamehub.fr/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
+    <script type="application/ld+json"> 
+        { "@context": "https://schema.org", "@type": "EducationalOrganization", "name": "Département Informatique - IUT d'Aix-en-Provence", 
+        "address": { "@type": "PostalAddress", "streetAddress": "Avenue Gaston Berger", "addressLocality": "Aix-en-Provence", "postalCode": "13625",
+         "addressCountry": "FR" }, "url": "https://iut.univ-amu.fr/", "telephone": "+33 4 42 93 90 00" } 
     </script>
     
     <!-- Styles -->
@@ -55,10 +30,20 @@
     <header>
         <div class="container">
             <a href="index.html" aria-label="Accueil Game Hub"><h1>Game Hub</h1></a>
-            <nav class="navbar" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Menu principal">
+            <nav class="navbar" aria-label="Menu principal" >
                 <ul>
-                    <li><a href="./Pages/formulaire.html" aria-label="Accéder au formulaire" itemprop="url"><i class="fas fa-address-card" aria-hidden="true"></i> <span itemprop="name">Formulaire</span></a></li>
-                    <li><a href="mailto:sitebut@alwaysdata.net" aria-label="Nous contacter par email" itemprop="url"><i class="fas fa-envelope" aria-hidden="true"></i> <span itemprop="name">Contact</span></a></li>
+                    <li>
+                        <a href="./Pages/formulaire.html" aria-label="Accéder au formulaire">
+                            <i class="fas fa-address-card" aria-hidden="true"></i> 
+                            <span>Formulaire</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:sitebut@alwaysdata.net" aria-label="Nous contacter par email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> 
+                            <span>Contact</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="header-buttons">
@@ -112,9 +97,10 @@
                     rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube Game Hub</a></li>
             <li><a href="https://www.instagram.com/gamehub24" target="_blank" rel="noopener noreferrer"><i
                         class="fab fa-instagram"></i> Instagram Game Hub</a></li>
+            <li><a href="https://discord.gg/zNmbNJ62" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord Game Hub</a></li>
         </ul>
         <p>
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >
                 <img alt="Licence Creative Commons" 
                      width="88" 
                      height="31" 
@@ -122,6 +108,10 @@
             </a>
         </p>
         <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+        <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
     </footer>
 
     <!-- Template pour la carte de jeu -->
@@ -161,8 +151,5 @@
     <script src="./assets/js/theme.js" defer></script>
     <script src="./assets/js/back-to-top.js" defer></script>
     <script src="./assets/js/menu.js" defer></script>
-    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
 </body>
 </html>

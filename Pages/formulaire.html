@@ -16,10 +16,10 @@
     <header>
         <div class="container">
             <a href="../index.html"><h1>Game Hub</h1></a>
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Navigation principale">
                 <ul>
-                    <li><a href="mailto:sitebut@alwaysdata.net"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li><a href="./formulaire.html"><i class="fas fa-address-card"></i> Formulaire</a></li>
+                    <li><a href="./formulaire.html"><i class="fas fa-address-card" aria-hidden="true"></i> <span>Formulaire</span></a></li>
+                    <li><a href="mailto:sitebut@alwaysdata.net"><i class="fas fa-envelope" aria-hidden="true"></i> <span>Contact</span></a></li>
                 </ul>
             </nav>
             <button id="toggle-theme">Thème</button>
@@ -84,13 +84,13 @@
             </a>
         </p>
         <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+        <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
     </footer>
 
     <script src="../assets/js/theme.js" defer></script>
     <script src="../assets/js/menu.js" defer></script>
-    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
     <script src="../assets/js/back-to-top.js" defer></script>
 </body>
 

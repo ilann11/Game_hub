@@ -24,8 +24,8 @@
             </a>
             <nav class="navbar" aria-label="Navigation principale">
                 <ul>
-                    <li><a href="mailto:sitebut@alwaysdata.net" aria-label="Nous contacter par email"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a></li>
-                    <li><a href="./formulaire.html" aria-label="Accéder au formulaire"><i class="fas fa-address-card" aria-hidden="true"></i> Formulaire</a></li>
+                    <li><a href="./formulaire.html"><i class="fas fa-address-card" aria-hidden="true"></i> <span>Formulaire</span></a></li>
+                    <li><a href="mailto:sitebut@alwaysdata.net"><i class="fas fa-envelope" aria-hidden="true"></i> <span>Contact</span></a></li>
                 </ul>
             </nav>
             <div class="header-buttons">
@@ -83,19 +83,14 @@
                 <section class="video-jeu">
                     <h2>Bande-annonce</h2>
                     <div class="video-container">
-                        <div class="video-facade" data-video-id="DDxikKSDtZg">
-                            <img src="https://img.youtube.com/vi/DDxikKSDtZg/maxresdefault.jpg" 
-                                 alt="Miniature Final Fantasy VII Trailer"
-                                 width="1280"
-                                 height="720"
-                                 loading="lazy"
-                                 decoding="async"
-                                 class="video-thumbnail">
-                            <button class="play-button"
-                                   aria-label="Lancer la bande-annonce de Final Fantasy VII">
-                                <i class="fas fa-play" aria-hidden="true"></i>
-                            </button>
-                        </div>
+                        <iframe 
+                            width="1280" 
+                            height="720" 
+                            src="https://www.youtube.com/embed/DDxikKSDtZg" 
+                            title="Final Fantasy VII Trailer"
+                            allow="autoplay; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </section>
 
@@ -154,9 +149,10 @@
                     rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube Game Hub</a></li>
             <li><a href="https://www.instagram.com/gamehub24" target="_blank" rel="noopener noreferrer"><i
                         class="fab fa-instagram"></i> Instagram Game Hub</a></li>
+            <li><a href="https://discord.gg/zNmbNJ62" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord Game Hub</a></li>
         </ul>
         <p>
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >
                 <img alt="Licence Creative Commons" 
                      width="88" 
                      height="31" 
@@ -164,38 +160,18 @@
             </a>
         </p>
         <p>&copy; 2024 Game Hub. Tous droits réservés.</p>
+
+
+        <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+
     </footer>
 
-    <script src="../assets/js/menu.js" defer></script>
     <script src="../assets/js/theme.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
     <script src="../assets/js/back-to-top.js" defer></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const playButtons = document.querySelectorAll('.play-button');
-            playButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const facade = button.closest('.video-facade');
-                    const videoId = facade.dataset.videoId;
-                    const iframe = document.createElement('iframe');
-                    iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`;
-                    iframe.title = "Final Fantasy VII Trailer";
-                    iframe.width = '1280';
-                    iframe.height = '720';
-                    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-                    iframe.allowFullscreen = true;
-                    
-                    const wrapper = facade.closest('.video-container');
-                    wrapper.innerHTML = ''; // Vide le conteneur parent
-                    wrapper.appendChild(iframe);
-                });
-            });
-        });
-    </script>
 
-    <button id="back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
 </body>
 
 </html>
