@@ -149,10 +149,18 @@
                     rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube Game Hub</a></li>
             <li><a href="https://www.instagram.com/gamehub24" target="_blank" rel="noopener noreferrer"><i
                         class="fab fa-instagram"></i> Instagram Game Hub</a></li>
+<<<<<<< HEAD
             <li><a href="https://discord.gg/zNmbNJ62" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord Game Hub</a></li>
         </ul>
         <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >
+=======
+            <li><a href="https://discord.gg/zNmbNJ62" target="_blank" 
+                            rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord Game Hub</a></li>
+        </ul>
+        <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">
+>>>>>>> 31d4e12107a7e1f7d061da94bca35f032beeab18
                 <img alt="Licence Creative Commons" 
                      width="88" 
                      height="31" 
@@ -170,5 +178,27 @@
     <script src="../assets/js/theme.js" defer></script>
     <script src="../assets/js/menu.js" defer></script>
     <script src="../assets/js/back-to-top.js" defer></script>
+<<<<<<< HEAD
+=======
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.loadVideo = (videoId) => {
+                const facade = document.querySelector(`[data-video-id="${videoId}"]`);
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`;
+                iframe.title = "Donkey Kong Country Trailer";
+                iframe.width = '1280';
+                iframe.height = '720';
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                
+                const wrapper = facade.closest('.video-container');
+                wrapper.innerHTML = '';
+                wrapper.appendChild(iframe);
+            };
+        });
+    </script>
+    
+>>>>>>> 31d4e12107a7e1f7d061da94bca35f032beeab18
 </body>
 </html> 
