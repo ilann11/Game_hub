@@ -1,2 +1,3 @@
-function myFunction(){var element=document.body;element.classList.toggle("dark-mode")}
-document.addEventListener('DOMContentLoaded',()=>{const themeButton=document.getElementById('toggle-theme');if(themeButton){themeButton.addEventListener('click',myFunction)}})
+function toggleDarkMode(){var element=document.body;element.classList.toggle("dark-mode");if(element.classList.contains("dark-mode")){localStorage.setItem("theme","dark")}else{localStorage.setItem("theme","light")}}
+document.addEventListener("DOMContentLoaded",()=>{const savedTheme=localStorage.getItem("theme");if(savedTheme==="dark"){document.body.classList.add("dark-mode")}
+const themeButton=document.getElementById("toggle-theme");if(themeButton){themeButton.addEventListener("click",toggleDarkMode)}})
